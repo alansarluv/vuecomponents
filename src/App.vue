@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div class="container">
+      <app-header></app-header>
+      <div class="row">
+        <div class="col-md-12">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-
+import Header from './components/Header'
 export default {
   name: 'app',
+  components: {
+    appHeader: Header
+  }
 }
 </script>
 
@@ -18,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
