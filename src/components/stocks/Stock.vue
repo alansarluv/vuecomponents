@@ -15,7 +15,9 @@
                   v-model="quantity">
         </div>
         <div class="float-right">
-          <button class="btn btn-success" @click="buyStock">Buy</button>
+          <button class="btn btn-success"
+                  @click="buyStock"
+                  :disabled="quantity <= 0">Buy</button>
         </div>
       </div>
     </div>
@@ -36,6 +38,7 @@ export default {
         stockPrice: this.stock.price,
         quantity: this.quantity
       }
+      alert(order)
       this.quantity = 0      
     }
   }
