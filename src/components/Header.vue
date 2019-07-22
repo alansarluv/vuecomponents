@@ -28,7 +28,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#" @click="saveData">Save data</a>
-            <a class="dropdown-item" href="#">Load data</a>
+            <a class="dropdown-item" href="#" @click="loadData">Load data</a>
           </div>          
         </li>
       </ul>
@@ -50,9 +50,10 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'randomizeStock'
-    ]),
+    ...mapActions({
+      randomizeStock: 'randomizeStock',
+      fetchData: 'loadData'
+    }),
     endDay () {
       this.randomizeStock()
     },
@@ -63,6 +64,9 @@ export default {
         stocks: this.$store.getters.stocks
       }
       this.$http.put('data.json', data)
+    },
+    loadData () {
+      this.fetchData()
     }
   }
 }
