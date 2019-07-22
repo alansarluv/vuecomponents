@@ -27,7 +27,7 @@
             Save & Load
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Save data</a>
+            <a class="dropdown-item" href="#" @click="saveData">Save data</a>
             <a class="dropdown-item" href="#">Load data</a>
           </div>          
         </li>
@@ -55,6 +55,14 @@ export default {
     ]),
     endDay () {
       this.randomizeStock()
+    },
+    saveData () {
+      const data = {
+        funds: this.$store.getters.funds,
+        stockPortfolio: this.$store.getters.stockPortfolio,
+        stocks: this.$store.getters.stocks
+      }
+      this.$http.put('data.json', data)
     }
   }
 }
