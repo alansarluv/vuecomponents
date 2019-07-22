@@ -29,6 +29,16 @@
           </div>          
         </li>
       </ul>
+      <strong class="navbar-text ml-3">Funds: {{funds | currency}}</strong>
     </div>
   </nav>
 </template>
+<script>
+export default {
+  computed: {
+    funds () {
+      return this.$store.getters.funds
+    }
+  }
+}
+</script>

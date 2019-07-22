@@ -12,6 +12,10 @@ const router = new VueRouter({
   routes
 })
 
+Vue.filter ('currency', (value) => {
+  return 'Rp. ' + value.toLocaleString()
+})
+
 Vue.config.productionTip = false
 
 new Vue({
