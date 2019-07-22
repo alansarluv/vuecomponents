@@ -13,8 +13,11 @@
         <li>
           <a @click="endDay" href="#" class="nav-link">End day</a>
         </li>
-        <li class="nav-item dropdown">
+        <li 
+          class="nav-item dropdown"
+          :class="{show: isDropdownOpen}">
           <a
+            @click="isDropdownOpen = !isDropdownOpen"
             class="nav-link dropdown-toggle"
             href="#" id="navbarDropdown"
             role="button"
@@ -36,6 +39,11 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
+  data () {
+    return {
+      isDropdownOpen: false
+    }
+  },
   computed: {
     funds () {
       return this.$store.getters.funds
