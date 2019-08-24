@@ -6,6 +6,9 @@
     <hr>
     <p>Your Funds balance: {{ funds | currency }}</p>
 
+    <!-- try install my custom web component from npm package -->
+    <p>  <cwc-progress-bar fillcolor="green" basecolor="#02F" fillprecent="60" type="default">Mihaa</cwc-progress-bar> </p>
+
   </div>
 </template>
 <script>

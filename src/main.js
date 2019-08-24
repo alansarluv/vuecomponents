@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import { defineCustomElements } from 'custom-webcomponents-sarluv/loader'
+
 import VueRouter from 'vue-router'
 import { routes } from './routes'
 
 import VueResource from 'vue-resource'
 
 import store from './store/store'
+
+defineCustomElements(window)
 
 Vue.use(VueRouter)
 const router = new VueRouter({
